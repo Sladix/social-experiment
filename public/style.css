@@ -1,0 +1,247 @@
+/* styles */
+/* called by your view template */
+
+/* You might want to try something fancier: */
+/* less: http://lesscss.org/ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 25px;
+}
+body.dark #unlocks p{
+  background:black;
+  border-color:#111;
+}
+h1 {
+  font-weight: bold;
+  color: pink;
+  text-align:center;
+}
+
+.bold {
+  font-weight: bold;
+}
+.box-container{
+  display:flex;
+  flex-flow:wrap row;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  margin: 20px;
+  font-size: 11px;
+  word-break: break-word;
+  position: relative;
+  box-shadow: 0 0 15px 0px rgba(0,0,0,0.1);
+  animation : appear 0.2s ease;
+  animation-fill-mode: forwards;
+  position:relative;
+}
+.box.dead:after{
+  content:'\02620';
+  position:absolute;
+  display:flex;
+  top:0;
+  left:0;
+  color:white;
+  background:rgba(0,0,0,0.8);
+  height:100%;
+  width:100%;
+  font-size:100px;
+  align-items: center;
+  justify-content: center;
+  border-radius:3px;
+  
+}
+.box.dead:before{
+  content:'Dead';
+  position:absolute;
+  display:block;
+  left:0;
+  bottom:10%;
+  font-size:20px;
+  color:white;
+  z-index:2;
+  text-align:center;
+  width:100%;
+}
+.box .panel-body{
+  max-width: 200px;
+  max-height: 200px;
+}
+.box.is-admin{
+  border-color:red;
+}
+body.dark .zgeg,
+.zgeg{
+  margin: 5px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-flow:wrap row;
+}
+body.dark .zgeg .progress,
+.progress{
+  margin:0;
+  height:15px;
+}
+body.dark .zgeg .progress-bar,
+.zgeg .progress-bar{
+  font-size:7px;
+  line-height:15px;
+}
+.zgeg .c{
+  padding: 0 5px;
+}
+.zgeg .c:nth-child(1){
+  width:75%;
+}
+
+.zgeg .c:nth-child(2){
+  width:25%;
+}
+.box.is-admin:after{
+    content: 'Admin';
+    padding: 3px;
+    color: white;
+    background: red;
+    display: block;
+    text-align: right;
+}
+.achievments{
+  display:flex;
+  flex-flow:wrap row;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-top:1px solid #eee;
+}
+.achievment{
+  display:block;
+  position:relative;
+  font-size:14px;
+  margin:5px;
+}
+.achievment:hover .description{
+  opacity:1;
+  visibility:visible;
+  transition: all 0.3s ease;
+
+}
+.achievment .description{
+  visibility:hidden;
+  display:inline-block;
+  padding:5px;
+  background:#333;
+  color:white;
+  position:absolute;
+  left:50%;
+  bottom:100%;
+  transform: translateX(-50%);
+  width: 150px;
+  border-radius: 3px;
+  font-size: 9px;
+  transition: all 0s ease;
+}
+.toolbar{
+  margin: 30px auto;
+}
+#unlocks{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:10px;
+  z-index:5;
+  display:inline-block;
+}
+.unlock{
+  animation : appear 0.4s ease;
+  animation-fill-mode: forwards;
+}
+#unlocks p{
+  padding:5px;
+  border:1px solid #eee;
+  border-radius:3px;
+  background:white;
+  cursor:pointer;
+  display:inline-block;
+}
+#unlocks p .al{
+  display:inline-block;
+  margin-left:10px
+}
+p {
+  max-width: 600px;
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: cyan;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 3px;
+}
+
+textarea {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.power-bar{
+  padding:5px;
+  display:flex;
+  flex-flow : wrap row;
+  justify-content:center;
+  align-items:center;
+}
+.action-bar{
+  display:flex;
+  flex-flow: wrap row;
+  justify-content:space-around;
+  align-items:center;
+  padding: 5px 0;
+  background: #222;
+}
+li {
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
+
+footer a {
+  color: #fff !important;
+}
+
+.nicejob {
+  text-decoration: line-through;
+}
+.instructions h3{
+  margin: 10px auto;
+}
+
+@keyframes appear{
+  0%{
+    opacity : 0;
+    transform : translateY(-50px);
+  }
+  100%{
+    opacity : 1;
+    transform : translateY(0);
+  }
+}
